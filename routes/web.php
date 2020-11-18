@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,18 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home');
-});
+Route::resource('ads', AdsController::class);
 
-Route::get("/about-us", [HomeController::class, "about_us"]);
-Route::get("/contact-us", [HomeController::class, "contact_us"]);
-Route::get("/post-add", [HomeController::class, "post_add"]);
-Route::get("/categories", [HomeController::class, "categories"]);
-Route::get("/adds-listing", [HomeController::class, "adds_listing"]);
-Route::get("/blog", [HomeController::class, "blog"]);
-Route::get("/terms", [HomeController::class, "terms"]);
-Route::get("/privacy", [HomeController::class, "privacy"]);
+Route::get("/about-us", [HomeController::class, "about_us"])->name('about_us');
+Route::get("/contact-us", [HomeController::class, "contact_us"])->name('contact_us');
+Route::get("/categories", [HomeController::class, "categories"])->name('categories');
+Route::get("/blog", [HomeController::class, "blog"])->name('blog');
+Route::get("/terms", [HomeController::class, "terms"])->name('terms');
+Route::get("/privacy", [HomeController::class, "privacy"])->name('privacy');
+Route::get("/", [HomeController::class, "index"])->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');

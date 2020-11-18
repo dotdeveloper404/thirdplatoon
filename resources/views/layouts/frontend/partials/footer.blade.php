@@ -1,7 +1,7 @@
 <footer>
     <div class="container">
         <div class="col-md-3">
-            <img src="assets/images/logo.png" class="img-responsive">
+            <img src="{{ asset('assets/images/logo.png') }}" class="img-responsive">
         </div>
         <div class="col-md-3">
             <h4>Need Help</h4>
@@ -13,25 +13,12 @@
         <div class="col-md-3">
             <h4>Quick Links</h4>
             <ul class="quick-ul">
-
-                <a href="/">
-                    <li>Home</li>
-                </a>
-                <a href="/about-us">
-                    <li>About Us</li>
-                </a>
-                <a href="/contact-us">
-                    <li>Contact Us</li>
-                </a>
-                <a href="/pricing">
-                    <li>Categories</li>
-                </a>
-                <a href="/post-add">
-                    <li>Post Add</li>
-                </a>
-                <a href="/blog">
-                    <li>Blog </li>
-                </a>
+                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('about_us') }}">About Us</a></li>
+                <li><a href="{{ route('contact_us') }}">Contact Us</a></li>
+                <li><a href="{{ route('categories') }}">Categories</a></li>
+                <li><a href="{{ route('ads.create') }}">Post Ads</a></li>
+                <li><a href="{{ route('blog') }}">Blog </a></li>
             </ul>
         </div>
         <div class="col-md-3">
@@ -44,19 +31,14 @@
                 <li><i class="fa fa-google-plus-official" aria-hidden="true"></i></li>
             </ul>
         </div>
-
         <section class="copyright">
             <div class="col-md-6">
                 <p>© Copyright 2020 Th3rdPlatoon. All Rights Reserved</p>
             </div>
             <div class="col-md-6">
                 <ul class="foot-ul">
-                    <a href="/terms">
-                        <li>Terms & Conditions </li>
-                    </a>
-                    <a href="/privacy">
-                        <li>Privacy Policy</li>
-                    </a>
+                    <li><a href="{{ route('terms') }}">Terms & Conditions</a></li>
+                    <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
                 </ul>
             </div>
         </section>

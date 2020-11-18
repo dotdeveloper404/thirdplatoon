@@ -1,18 +1,24 @@
 @font-face {
     font-family: 'freshmannormal';
     src: url('font/freshman-webfont.woff2') format('woff2'),
-    	 url('font/Freshman-webfont.ttf') format('ttf'),
-         url('font/freshman-webfont.woff') format('woff');
+        url('font/Freshman-webfont.ttf') format('ttf'),
+        url('font/freshman-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
 }
 
-h1,h2{
-	font-family: 'freshmannormal' !important;
+h1,
+h2 {
+    font-family: 'freshmannormal' !important;
 }
+
 header {
     background: #031c39d1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .banner-area {
@@ -23,7 +29,10 @@ header {
     border-bottom: 1px solid #316091;
 }
 
-ul.social-ul-top {padding-left: 0px;margin-top: 15px;}
+ul.social-ul-top {
+    padding-left: 0px;
+    margin-top: 15px;
+}
 
 ul.social-ul-top li {
     color: #1be500;
@@ -31,10 +40,12 @@ ul.social-ul-top li {
     padding-right: 30px;
     text-transform: capitalize;
 }
-ul.social-ul-top li a{
-	color: #1be500;
-	 text-decoration: none;
+
+ul.social-ul-top li a {
+    color: #1be500;
+    text-decoration: none;
 }
+
 ul.wish-ul {
     padding-left: 0px;
     margin-top: 15px;
@@ -46,9 +57,10 @@ ul.wish-ul li {
     padding-right: 25px;
     text-transform: capitalize;
 }
-ul.wish-ul li a{
-	color: #1be500;
- 	text-decoration: none;
+
+ul.wish-ul li a {
+    color: #1be500;
+    text-decoration: none;
 }
 
 ul.main-nav-ul li {
@@ -56,10 +68,12 @@ ul.main-nav-ul li {
     color: #fff !important;
     padding: 0px 7px;
 }
+
 ul.main-nav-ul li a {
     color: #fff;
     text-decoration: none;
 }
+
 ul.main-nav-ul {
     margin-top: 30px;
 }
@@ -67,19 +81,22 @@ ul.main-nav-ul {
 .main-header {
     padding: 20px;
 }
+
 .banner-content-area {
-    padding-top: 120px;
-    padding-bottom: 120px !important;
+    padding: 260px 0 120px 0;
     text-align: center;
 }
 
-.banner-content-area h2 {color: #fff;     font-size: 70px;}
+.banner-content-area h2 {
+    color: #fff;
+    font-size: 70px;
+}
 
 .banner-content-area h5 {
     color: #fff;
     font-size: 30px;
     letter-spacing: 1px;
-    padding-bottom:20px !important;
+    padding-bottom: 20px !important;
 }
 
 .banner-content-area a {
@@ -88,7 +105,7 @@ ul.main-nav-ul {
     color: #fff;
     font-size: 18px;
     letter-spacing: 1px;
-    border-radius:5px;
+    border-radius: 5px;
 }
 
 section.form-area input[type=text] {
@@ -104,6 +121,7 @@ section.form-area select {
     height: 40px;
     border-radius: 7px;
 }
+
 section.form-area input[type=submit] {
     width: 15%;
     height: 40px;
@@ -190,7 +208,18 @@ section.featured h3 {
     position: relative;
 }
 
-section.featured h3:after {content: "";height: 6px;width: 180px;position: absolute;background: #087c00;margin: 0 auto;display: block;left: 0px;right: 0px;top: 60px;}
+section.featured h3:after {
+    content: "";
+    height: 6px;
+    width: 180px;
+    position: absolute;
+    background: #087c00;
+    margin: 0 auto;
+    display: block;
+    left: 0px;
+    right: 0px;
+    top: 60px;
+}
 
 .featured p {
     background: #006711;
@@ -215,6 +244,7 @@ section.featured h3:after {content: "";height: 6px;width: 180px;position: absolu
     color: #000;
     font-size: 16px;
 }
+
 section.numbers-area {
     background: url(../images/home-sec4-bg.png);
     padding-top: 80px;
@@ -304,8 +334,8 @@ section.post-ad-sec {
 .post-ad-right a {
     margin-left: 37px;
     color: #434343;
-    position:relative;
-    top:-10px
+    position: relative;
+    top: -10px
 }
 
 .post-ad-sec .col-md-6 {
@@ -390,6 +420,7 @@ section.newsletter-area h3 {
     color: #fff;
     font-size: 16px;
 }
+
 .col-md-6.testi-bg {
     background: url(../images/testimonial-bg.png);
     background-size: 100% 100%;
@@ -403,6 +434,7 @@ section.testimonial {
     padding-bottom: 50px !important;
     background: #e5e5e52e;
 }
+
 .col-md-6.testi-bg img {
     position: absolute;
     left: -50px;
@@ -412,25 +444,45 @@ section.testimonial {
 
 .col-md-6.testi-bg p {
     line-height: 35px;
-    color:#828892;
-    font-weight:700;
+    color: #828892;
+    font-weight: 700;
     padding-left: 30px;
 }
-.testimonial h3:after {content: "";height: 6px;width: 180px;position: absolute;background: #087c00;margin: 0 auto;display: block;left: 0px;right: 0px;top: 60px;}
+
+.testimonial h3:after {
+    content: "";
+    height: 6px;
+    width: 180px;
+    position: absolute;
+    background: #087c00;
+    margin: 0 auto;
+    display: block;
+    left: 0px;
+    right: 0px;
+    top: 60px;
+}
+
 .testimonial h3 {
-       color: #2e3292;
+    color: #2e3292;
     text-align: center;
     font-weight: 700;
     font-size: 35px;
     padding-bottom: 80px;
     position: relative;
 }
+
 section.news-section {
     background: url(../images/home-sec7-bg.png);
     padding-top: 80px;
 }
 
-section.news-section h5 {text-align: center;color: #fff;text-transform: uppercase;font-weight: 700;font-size: 14px;}
+section.news-section h5 {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+}
 
 section.news-section h3 {
     text-align: center;
@@ -444,7 +496,7 @@ section.news-section h3 {
     text-align: center;
     color: #fff;
     padding-bottom: 50px;
-}	
+}
 
 .blog-text-area {
     width: 90%;
@@ -455,7 +507,10 @@ section.news-section h3 {
     background: #fff;
 }
 
-.blog-text-area ul li {display: inline;padding: 10px;}
+.blog-text-area ul li {
+    display: inline;
+    padding: 10px;
+}
 
 .blog-text-area ul {
     padding-left: 0px;
@@ -492,15 +547,19 @@ section.news-section h3 {
 
 
 
-.col-md-4:nth-child(2) .col-md-2 {background: #0dad00 !important;}
+.col-md-4:nth-child(2) .col-md-2 {
+    background: #0dad00 !important;
+}
 
 .blog-text-area:hover {
     box-shadow: 1px 10px 14px -4px #0000008c;
     transition: 0.5s;
 }
+
 section.blog-area {
     padding-bottom: 80px;
 }
+
 footer {
     background: #00034a;
     padding-top: 100px;
@@ -515,16 +574,24 @@ footer ul {
     padding-left: 0px;
 }
 
-footer ul li {
+footer ul li,
+footer ul li a {
     list-style: none;
     color: #fff;
     line-height: 30px;
+}
+
+footer ul li a:hover,
+footer ul li a:focus {
+    color: #fff;
+    text-decoration: none;
 }
 
 ul.quick-ul {
     column-count: 2;
     padding-bottom: 50px;
 }
+
 ul.footer-social li {
     display: inline;
     padding: 3px;
@@ -553,7 +620,10 @@ ul.foot-ul li {
     padding: 10px;
 }
 
-ul.foot-ul {width: 50%;float: right;}
+ul.foot-ul {
+    width: 50%;
+    float: right;
+}
 
 section.copyright p {
     color: #fff;
@@ -570,6 +640,7 @@ ul.main-nav-ul li:last-child {
     border-radius: 5px;
     text-transform: uppercase;
 }
+
 ul.main-nav-ul li:last-child:hover {
     background: #000;
     transition: 0.5s;
@@ -606,11 +677,24 @@ section.form-area input[type=submit]:hover {
 
 section.browse-categories {
     text-align: center;
-    padding-bottom:80px;
+    padding-bottom: 80px;
 }
-.browse-categories h3:after {content: "";height: 6px;width: 180px;position: absolute;background: #087c00;margin: 0 auto;display: block;left: 0px;right: 0px;top: 60px;}
+
+.browse-categories h3:after {
+    content: "";
+    height: 6px;
+    width: 180px;
+    position: absolute;
+    background: #087c00;
+    margin: 0 auto;
+    display: block;
+    left: 0px;
+    right: 0px;
+    top: 60px;
+}
+
 .browse-categories h3 {
-       color: #2e3292;
+    color: #2e3292;
     text-align: center;
     font-weight: 700;
     font-size: 35px;
@@ -620,12 +704,12 @@ section.browse-categories {
 
 .browse-categories img {
     height: 80px;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 .browse-categories h4 {
     color: #0056a7;
-    font-weight:500;
+    font-weight: 500;
 }
 
 .col-md-2.browse-box:hover {
@@ -633,12 +717,12 @@ section.browse-categories {
     transition: 0.5s;
 }
 
-section.featured .col-md-3:hover  img {
+section.featured .col-md-3:hover img {
     filter: grayscale(1);
     transition: 0.5s;
 }
 
-.featured .col-md-3:hover  p {
+.featured .col-md-3:hover p {
     background: #000;
     transition: 0.5s;
 }
@@ -647,6 +731,7 @@ section.featured .col-md-3:hover  img {
     background: #000;
     transition: 0.5s;
 }
+
 section.about-sec {
     background-color: #087c00;
 }

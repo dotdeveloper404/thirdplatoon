@@ -1,0 +1,32 @@
+.main-section {
+    padding: 80px 0;
+}
+
+.main-panel {
+    border: 1px solid #eee;
+    padding: 25px 20px;
+    border-radius: 3px;
+}
+
+.main-head {
+    margin-bottom: 20px;
+}
+
+.main-head h3 {
+    color: #666;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+}
+
+.btn-base {
+    background-color: #1274B4;
+    color: #ffffff;
+    transition: all .3s;
+}
+
+.btn-base:hover, .btn-base:focus {
+    color: #ffffff;
+    background-color: #0091dd;
+}

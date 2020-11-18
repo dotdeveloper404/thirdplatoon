@@ -1,55 +1,16 @@
 @extends('layouts.frontend.app')
-
 @section('content')
-
-<section class="numbers-area">
-    <div class="container">
-        <div class="col-md-3">
-            <h3>208</h3>
-            <p>Listings</p>
-        </div>
-        <div class="col-md-3">
-            <h3>334</h3>
-            <p>Users</p>
-        </div>
-        <div class="col-md-3">
-            <h3>59</h3>
-            <p>Listing Type</p>
-        </div>
-        <div class="col-md-3">
-            <h3>40+</h3>
-            <p>Categories</p>
-        </div>
+<section class="banner-area">
+    <div class="banner-content-area">
+        <h2>Privacy Policy</h2>
     </div>
 </section>
-
-<section class="post-ad-sec">
+<section class="main-section">
     <div class="container">
-        <div class="col-md-6 post-ad-left">
-            <h3>Post an Ad</h3>
-            <p>Aliquam ultricies, lectus at ultrices tempus, mauris nibh pellentesque augue, sed ullamcorper ante
-                elit non dolor. Cras hendrerit dui leo, id sollicitudin purus blandit ac. Proin tincidunt sapien id
-                nunc elementum dignissim. </p>
-            <a href="#">Create Ad</a>
-        </div>
-        <div class="col-md-6 post-ad-right">
-            <h4>Featured Listings</h4>
-            <ul>
-                <li>Business Loans</li>
-                <li>Job Opportunities</li>
-                <li>Spa</li>
-                <li>Salon</li>
-                <li>Rent a House</li>
-                <li>Plumbing</li>
-                <li>Electrician</li>
-                <li>Tutor</li>
-                <li>Cars</li>
-                <li>Fast Food</li>
-                <li>Remodeling Services</li>
-            </ul>
-            <a href="#">See More listings</a>
-        </div>
+        <p>Ut dolor in est laboris in est voluptate aliqua consequat excepteur aute ut sed quis mollit cillum sunt ullamco ut eiusmod reprehenderit magna dolor anim nulla duis occaecat consectetur pariatur aliquip consectetur fugiat magna dolor nisi eiusmod dolor in cupidatat dolore cillum ut dolore eu laborum incididunt aliqua mollit mollit pariatur cupidatat eu non id ea occaecat excepteur quis ullamco quis qui labore pariatur qui dolor aliquip sunt id do dolor dolor officia eiusmod deserunt sed commodo cillum cupidatat qui labore eiusmod elit nostrud irure nulla ex tempor adipisicing quis elit sint dolore id ullamco cillum ut incididunt minim aute elit mollit eu nostrud proident incididunt eu cillum culpa culpa irure sit est sint anim non nostrud cillum sed fugiat consequat amet pariatur ad officia id adipisicing aute sint ut anim occaecat occaecat dolore irure reprehenderit mollit occaecat ex sit do irure sit sed laboris voluptate in elit laborum nisi commodo commodo in ut dolor velit quis.</p>
+        <p>Ut dolor in est laboris in est voluptate aliqua consequat excepteur aute ut sed quis mollit cillum sunt ullamco ut eiusmod reprehenderit magna dolor anim nulla duis occaecat consectetur pariatur aliquip consectetur fugiat magna dolor nisi eiusmod dolor in cupidatat dolore cillum ut dolore eu laborum incididunt aliqua mollit mollit pariatur cupidatat eu non id ea occaecat excepteur quis ullamco quis qui labore pariatur qui dolor aliquip sunt id do dolor dolor officia eiusmod deserunt sed commodo cillum cupidatat qui labore eiusmod elit nostrud irure nulla ex tempor adipisicing quis elit sint dolore id ullamco cillum ut incididunt minim aute elit mollit eu nostrud proident incididunt eu cillum culpa culpa irure sit est sint anim non nostrud cillum sed fugiat consequat amet pariatur ad officia id adipisicing aute sint ut anim occaecat occaecat dolore irure reprehenderit mollit occaecat ex sit do irure sit sed laboris voluptate in elit laborum nisi commodo commodo in ut dolor velit quis.</p>
+        <p>Ut dolor in est laboris in est voluptate aliqua consequat excepteur aute ut sed quis mollit cillum sunt ullamco ut eiusmod reprehenderit magna dolor anim nulla duis occaecat consectetur pariatur aliquip consectetur fugiat magna dolor nisi eiusmod dolor in cupidatat dolore cillum ut dolore eu laborum incididunt aliqua mollit mollit pariatur cupidatat eu non id ea occaecat excepteur quis ullamco quis qui labore pariatur qui dolor aliquip sunt id do dolor dolor officia eiusmod deserunt sed commodo cillum cupidatat qui labore eiusmod elit nostrud irure nulla ex tempor adipisicing quis elit sint dolore id ullamco cillum ut incididunt minim aute elit mollit eu nostrud proident incididunt eu cillum culpa culpa irure sit est sint anim non nostrud cillum sed fugiat consequat amet pariatur ad officia id adipisicing aute sint ut anim occaecat occaecat dolore irure reprehenderit mollit occaecat ex sit do irure sit sed laboris voluptate in elit laborum nisi commodo commodo in ut dolor velit quis.</p>
+        <p>Ut dolor in est laboris in est voluptate aliqua consequat excepteur aute ut sed quis mollit cillum sunt ullamco ut eiusmod reprehenderit magna dolor anim nulla duis occaecat consectetur pariatur aliquip consectetur fugiat magna dolor nisi eiusmod dolor in cupidatat dolore cillum ut dolore eu laborum incididunt aliqua mollit mollit pariatur cupidatat eu non id ea occaecat excepteur quis ullamco quis qui labore pariatur qui dolor aliquip sunt id do dolor dolor officia eiusmod deserunt sed commodo cillum cupidatat qui labore eiusmod elit nostrud irure nulla ex tempor adipisicing quis elit sint dolore id ullamco cillum ut incididunt minim aute elit mollit eu nostrud proident incididunt eu cillum culpa culpa irure sit est sint anim non nostrud cillum sed fugiat consequat amet pariatur ad officia id adipisicing aute sint ut anim occaecat occaecat dolore irure reprehenderit mollit occaecat ex sit do irure sit sed laboris voluptate in elit laborum nisi commodo commodo in ut dolor velit quis.</p>
     </div>
 </section>
-
 @endsection

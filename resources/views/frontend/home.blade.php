@@ -1,8 +1,34 @@
 @extends('layouts.frontend.app')
-
 @section('content')
-
-
+<section class="banner-area">
+    <div class="banner-content-area">
+        <h2>Discover the</h2>
+        <h2>Best Jobs For You</h2>
+        <h5>Find great ooportunities, hire and post jobs</h5>
+        <a href="#">SEE POSTS</a>
+    </div>
+</section>
+<section class="form-area">
+    <div class="container">
+        <form>
+            <input type="text" name="" placeholder="Enter Keyword">
+            <select>
+                <option>all categories</option>
+                <option>category 1</option>
+                <option>category 2</option>
+                <option>category 3</option>
+            </select>
+            <input type="text" name="">
+            <select>
+                <option>select price rating</option>
+                <option> 1</option>
+                <option> 2</option>
+                <option> 3</option>
+            </select>
+            <input type="submit" name="" value="search">
+        </form>
+    </div>
+</section>
 <section class="about-sec">
     <div class="col-md-6 about-left">
         <img src="assets/images/sec2-1.png">
@@ -14,15 +40,12 @@
             Aenean nibh erat, accumsan non faucibus eu, aliquet id massa. Curabitur arcu ante, molestie ac odio at,
             laoreet eleifend metus. Praesent diam velit, efficitur id libero quis, lacinia hendrerit arcu llus
             ullamcorper ante condimentum.</p>
-
         <a href="#">READ MORE</a>
     </div>
 </section>
-
 <section class="featured">
     <div class="container">
         <h3>Featured Classified</h3>
-
         <div class="col-md-3">
             <img src="assets/images/home-sec3-1.png" class="img-responsive">
             <p>Lawn Care</p>
@@ -39,14 +62,11 @@
             <img src="assets/images/sec2-4.png" class="img-responsive">
             <p>Carpenter</p>
         </div>
-
         <div class="see-btn">
             <a href="#">See More</a>
         </div>
     </div>
-
 </section>
-
 <section class="numbers-area">
     <div class="container">
         <div class="col-md-3">
@@ -67,7 +87,6 @@
         </div>
     </div>
 </section>
-
 <section class="post-ad-sec">
     <div class="container">
         <div class="col-md-6 post-ad-left">
@@ -96,43 +115,35 @@
         </div>
     </div>
 </section>
-
 <section class="browse-categories">
     <div class="container">
         <h3>Browse Categories</h3>
-
         <div class="col-md-2 browse-box">
             <img src="assets/images/ico-1.png">
             <h4>Business</h4>
         </div>
-
         <div class="col-md-2 browse-box">
             <img src="assets/images/ico-2.png">
             <h4>Cars </h4>
         </div>
-
         <div class="col-md-2 browse-box">
             <img src="assets/images/ico-3.png">
             <h4>Hotels</h4>
         </div>
-
         <div class="col-md-2 browse-box">
             <img src="assets/images/ico-4.png">
             <h4>Food</h4>
         </div>
-
         <div class="col-md-2 browse-box">
             <img src="assets/images/ico-5.png">
             <h4>Jobs</h4>
         </div>
-
         <div class="col-md-2 browse-box">
             <img src="assets/images/ico-6.png">
             <h4>Services</h4>
         </div>
     </div>
 </section>
-
 <section class="newsletter-area">
     <div class="container">
         <p>Subscribe to our</p>
@@ -141,17 +152,12 @@
         </div>
         <div class="col-md-7">
             <form>
-
                 <input type="email" name="">
-
-
                 <input type="submit" name="" value="Submit">
-
             </form>
         </div>
     </div>
 </section>
-
 <section class="testimonial">
     <div class="container">
         <h3>Testimonials</h3>
@@ -169,13 +175,11 @@
         </div>
     </div>
 </section>
-
 <section class="news-section">
     <div class="container">
         <h5>From the blog</h5>
         <h3>News & Articles</h3>
         <p>Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum</p>
-
         <div class="col-md-4">
             <img src="assets/images/home-sec7-1.png" class="img-responsive">
         </div>
@@ -187,7 +191,6 @@
         </div>
     </div>
 </section>
-
 <section class="blog-area">
     <div class="container">
         <div class="col-md-4 ">
@@ -201,12 +204,10 @@
                 <div class="col-md-2">
                     <h5>23 oct</h5>
                 </div>
-
                 <h4>Lorem ipsum dolor sit amet 1550s and the typeing.</h4>
                 <p>Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum</p>
             </div>
         </div>
-
         <div class="col-md-4 ">
             <div class="blog-text-area">
                 <div class="col-md-10">
@@ -218,12 +219,10 @@
                 <div class="col-md-2">
                     <h5>23 oct</h5>
                 </div>
-
                 <h4>Lorem ipsum dolor sit amet 1550s and the typeing.</h4>
                 <p>Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum</p>
             </div>
         </div>
-
         <div class="col-md-4 ">
             <div class="blog-text-area">
                 <div class="col-md-10">
@@ -235,15 +234,10 @@
                 <div class="col-md-2">
                     <h5>23 oct</h5>
                 </div>
-
                 <h4>Lorem ipsum dolor sit amet 1550s and the typeing.</h4>
                 <p>Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum</p>
             </div>
         </div>
-
-
-
     </div>
 </section>
-
 @endsection

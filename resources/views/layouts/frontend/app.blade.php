@@ -1,54 +1,24 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-
-
-@include('layouts.frontend.partials.head')
+<head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'The Third Platoon') }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+</head>
 
 <body>
-    <section class="banner-area">
-
-        @include('layouts.frontend.partials.header')
-
-        <div class="banner-content-area">
-            <h2>Discover the</h2>
-            <h2>Best Jobs For You</h2>
-            <h5>Find great ooportunities, hire and post jobs</h5>
-            <a href="#">SEE POSTS</a>
-        </div>
-
-    </section>
-
-    <section class="form-area">
-        <div class="container">
-            <form>
-                <input type="text" name="" placeholder="Enter Keyword">
-
-                <select>
-                    <option>all categories</option>
-                    <option>category 1</option>
-                    <option>category 2</option>
-                    <option>category 3</option>
-                </select>
-
-                <input type="text" name="">
-                <select>
-                    <option>select price rating</option>
-                    <option> 1</option>
-                    <option> 2</option>
-                    <option> 3</option>
-                </select>
-
-                <input type="submit" name="" value="search">
-            </form>
-        </div>
-    </section>
-
-
+    @include('layouts.frontend.partials.header')
     @yield('content')
-
     @include('layouts.frontend.partials.footer')
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/826a7e3dce.js"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
-
 </html>
