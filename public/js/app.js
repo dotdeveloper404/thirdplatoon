@@ -2639,7 +2639,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ["href", "active"],
   computed: {
     classes: function classes() {
-      return this.active ? "inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out" : "inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out";
+      return this.active ? "text-white inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-white-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out" : "text-white inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-white-500 hover:text-white-700 hover:border-gray-300 focus:outline-none focus:text-white-700 focus:border-gray-300 transition duration-150 ease-in-out";
     }
   }
 });
@@ -2932,6 +2932,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_DropdownLink__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/DropdownLink */ "./resources/js/Jetstream/DropdownLink.vue");
 /* harmony import */ var _Jetstream_NavLink__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/NavLink */ "./resources/js/Jetstream/NavLink.vue");
 /* harmony import */ var _Jetstream_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/ResponsiveNavLink */ "./resources/js/Jetstream/ResponsiveNavLink.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -24561,6 +24580,51 @@ var render = function() {
                           "\n                            Dashboard\n                        "
                         )
                       ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "jet-nav-link",
+                      {
+                        attrs: {
+                          href: _vm.route("categories"),
+                          active: _vm.route().current("categories")
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Categories\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "jet-nav-link",
+                      {
+                        attrs: {
+                          href: _vm.route("admin/user/ads"),
+                          active: _vm.route().current("admin/user/ads")
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Posted Ads\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "jet-nav-link",
+                      {
+                        attrs: {
+                          href: _vm.route("admin/blogs"),
+                          active: _vm.route().current("admin/blogs")
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Blogs\n                        "
+                        )
+                      ]
                     )
                   ],
                   1
@@ -41686,8 +41750,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\thirdplatoon\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\thirdplatoon\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! E:\xampp\htdocs\thirdplatoon\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\xampp\htdocs\thirdplatoon\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })

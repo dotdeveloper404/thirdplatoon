@@ -27,6 +27,25 @@
                             >
                                 Dashboard
                             </jet-nav-link>
+
+                            <jet-nav-link
+                                :href="route('categories')"
+                                :active="route().current('categories')"
+                            >
+                                Categories
+                            </jet-nav-link>
+                            <jet-nav-link
+                                :href="route('admin/user/ads')"
+                                :active="route().current('admin/user/ads')"
+                            >
+                                Posted Ads
+                            </jet-nav-link>
+                            <jet-nav-link
+                                :href="route('admin/blogs')"
+                                :active="route().current('admin/blogs')"
+                            >
+                                Blogs
+                            </jet-nav-link>
                         </div>
                     </div>
 
