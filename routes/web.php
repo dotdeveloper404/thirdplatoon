@@ -19,6 +19,7 @@ Route::resource('ads', AdsController::class);
 
 Route::get("/about-us", [HomeController::class, "about_us"])->name('about_us');
 Route::get("/contact-us", [HomeController::class, "contact_us"])->name('contact_us');
+Route::post("/contact-us", [HomeController::class, "form_submit"])->name('form_submit');
 Route::get("/categories", [HomeController::class, "categories"])->name('categories');
 Route::get("/blog", [HomeController::class, "blog"])->name('blog');
 Route::get("/terms", [HomeController::class, "terms"])->name('terms');
