@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Category;
 
 class CategorySeeder extends Seeder
 {
@@ -13,58 +14,43 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-
         $categories = [
             [
-                "Name" => "Veículos",
-                "Image" => "vehicles.png"
-
-            ],
-            [
-                "Name" => "Serviços",
-                "Image" => "services.png"
-            ],
-            [
-                "Name" => "Currículos",
-                "Image" => "resumes.png"
-            ],
-            [
-                "Name" => "Empregos",
-                "Image" => "jobs.png"
-            ],
-            [
-                "Name" => "Cursos e Aulas",
-                "Image" => "courses and classes.png"
-            ],
-            [
-                "Name" => "Imóveis",
-                "Image" => "homes.png"
-            ],
-            [
-                "Name" => "Compra e Venda",
-                "Image" => "buyandsell.png"
-            ],
-            [
-                "Name" => "Vestibulares e Concursos",
-                "Image" => "contest.png"
-            ],
-            [
-                "Name" => "Música, Arte & Fashion",
-                "Image" => "music.png"
-            ],
-            [
-                "Name" => "Férias e Temporada",
-                "Image" => "holiday.png"
-            ],
-            [
-                "Name" => "Negócios e Oportunidades",
-                "Child" => [
-                    ["Name" => "Franquias / Franchising"],
-                    ["Name" => "Idéias / Parcerias e Investidores"]
+                "title" => "Business",
+                "child" => [
+                    [
+                        "title" => "Business Child",
+                        "category_type" => "ads"
+                    ]
                 ],
-                "Image" => "business oppurtunities.png"
+                "category_type" => "ads",
+                "image" => "ico-1.png"
             ],
-
+            [
+                "title" => "Cars",
+                "category_type" => "ads",
+                "image" => "ico-2.png"
+            ],
+            [
+                "title" => "Hotels",
+                "category_type" => "ads",
+                "image" => "ico-3.png"
+            ],
+            [
+                "title" => "Food",
+                "category_type" => "ads",
+                "image" => "ico-4.png"
+            ],
+            [
+                "title" => "Jobs",
+                "category_type" => "ads",
+                "image" => "ico-5.png"
+            ],
+            [
+                "title" => "Services",
+                "category_type" => "ads",
+                "image" => "ico-6.png"
+            ]
         ];
 
         $this->_save_categories($categories);
@@ -72,20 +58,17 @@ class CategorySeeder extends Seeder
 
     private function _save_categories($categories, $parent_id = 0)
     {
-        //TODO: Sluggable package required.
-        $index = 0;
         foreach ($categories as $key => $category) {
-            $root = factory(Category::class)->create([
-                'sort_order' => $index,
-                'name' => $category['Name'],
+            $root = Category::create([
+                'title' => $category['title'],
                 'parent_id' => $parent_id,
-                'category_image' => isset($category['Image']) ? $category['Image'] : NULL
+                'image' => isset($category['image']) ? $category['image'] : NULL,
+                "category_type" => $category['category_type']
             ]);
 
-            if (isset($category["Child"]) && count($category["Child"]) > 0) {
-                $this->_save_categories($category["Child"], $root->id);
+            if (isset($category["child"]) && count($category["child"]) > 0) {
+                $this->_save_categories($category["child"], $root->id);
             }
-            $index++;
         }
     }
 }

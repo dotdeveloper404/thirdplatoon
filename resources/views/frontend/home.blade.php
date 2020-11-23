@@ -25,13 +25,13 @@
                 <option> 2</option>
                 <option> 3</option>
             </select>
-            <input type="submit" name="" value="search">
+            <input type="submit" value="search">
         </form>
     </div>
 </section>
 <section class="about-sec">
     <div class="col-md-6 about-left">
-        <img src="assets/images/sec2-1.png">
+        <img src="{{ asset('assets/images/sec2-1.png') }}">
     </div>
     <div class="col-md-6 about-right">
         <h2>ABOUT US</h2>
@@ -40,26 +40,26 @@
             Aenean nibh erat, accumsan non faucibus eu, aliquet id massa. Curabitur arcu ante, molestie ac odio at,
             laoreet eleifend metus. Praesent diam velit, efficitur id libero quis, lacinia hendrerit arcu llus
             ullamcorper ante condimentum.</p>
-        <a href="#">READ MORE</a>
+        <a href="{{ route('about_us') }}">READ MORE</a>
     </div>
 </section>
 <section class="featured">
     <div class="container">
         <h3>Featured Classified</h3>
         <div class="col-md-3">
-            <img src="assets/images/home-sec3-1.png" class="img-responsive">
+            <img src="{{ asset('assets/images/home-sec3-1.png') }}" class="img-responsive">
             <p>Lawn Care</p>
         </div>
         <div class="col-md-3">
-            <img src="assets/images/sec2-2.png" class="img-responsive">
+            <img src="{{ asset('assets/images/sec2-2.png') }}" class="img-responsive">
             <p>Rent A Car</p>
         </div>
         <div class="col-md-3">
-            <img src="assets/images/sec2-3.png" class="img-responsive">
+            <img src="{{ asset('assets/images/sec2-3.png') }}" class="img-responsive">
             <p>Plumbing Services</p>
         </div>
         <div class="col-md-3">
-            <img src="assets/images/sec2-4.png" class="img-responsive">
+            <img src="{{ asset('assets/images/sec2-4.png') }}" class="img-responsive">
             <p>Carpenter</p>
         </div>
         <div class="see-btn">
@@ -94,56 +94,36 @@
             <p>Aliquam ultricies, lectus at ultrices tempus, mauris nibh pellentesque augue, sed ullamcorper ante
                 elit non dolor. Cras hendrerit dui leo, id sollicitudin purus blandit ac. Proin tincidunt sapien id
                 nunc elementum dignissim. </p>
-            <a href="#">Create Ad</a>
+            <a href="{{ route('ads.create') }}">Create Ad</a>
         </div>
         <div class="col-md-6 post-ad-right">
-            <h4>Featured Listings</h4>
-            <ul>
-                <li>Business Loans</li>
-                <li>Job Opportunities</li>
-                <li>Spa</li>
-                <li>Salon</li>
-                <li>Rent a House</li>
-                <li>Plumbing</li>
-                <li>Electrician</li>
-                <li>Tutor</li>
-                <li>Cars</li>
-                <li>Fast Food</li>
-                <li>Remodeling Services</li>
-            </ul>
-            <a href="#">See More listings</a>
+            <h4>Featured Categories</h4>
+            @if($featureds->count())
+                <ul>
+                    @foreach($featureds as $featured)
+                        <li>{{ $featured->title }}</li>
+                    @endforeach
+                </ul>
+            @endif
+            <a href="{{ route('categories') }}">See More Categories</a>
         </div>
     </div>
 </section>
-<section class="browse-categories">
-    <div class="container">
-        <h3>Browse Categories</h3>
-        <div class="col-md-2 browse-box">
-            <img src="assets/images/ico-1.png">
-            <h4>Business</h4>
+@if($categories->count())
+    <section class="browse-categories">
+        <div class="container">
+            <h3>Browse Categories</h3>
+                @foreach($categories as $category)
+                    <div class="col-md-2 browse-box">
+                        <a href="{{ $category->path() }}">
+                            <img src="{{ $category->image() }}">
+                            <h4>{{ $category->title }}</h4>
+                        </a>
+                    </div>
+                @endforeach
         </div>
-        <div class="col-md-2 browse-box">
-            <img src="assets/images/ico-2.png">
-            <h4>Cars </h4>
-        </div>
-        <div class="col-md-2 browse-box">
-            <img src="assets/images/ico-3.png">
-            <h4>Hotels</h4>
-        </div>
-        <div class="col-md-2 browse-box">
-            <img src="assets/images/ico-4.png">
-            <h4>Food</h4>
-        </div>
-        <div class="col-md-2 browse-box">
-            <img src="assets/images/ico-5.png">
-            <h4>Jobs</h4>
-        </div>
-        <div class="col-md-2 browse-box">
-            <img src="assets/images/ico-6.png">
-            <h4>Services</h4>
-        </div>
-    </div>
-</section>
+    </section>
+@endif
 <section class="newsletter-area">
     <div class="container">
         <p>Subscribe to our</p>

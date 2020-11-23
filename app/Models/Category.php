@@ -27,4 +27,17 @@ class Category extends Model
     {
         return $query->where('category_type', 'ads');
     }
+
+    public function scopeParents($query) 
+    {
+        return $query->where('parent_id', 0);
+    }
+
+    public function image() {
+        return asset('storage/categories/' . $this->image);
+    }
+
+    public function path() {
+        return route('ads.index') . '?category='.$this->id;
+    }
 }
