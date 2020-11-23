@@ -24601,8 +24601,8 @@ var render = function() {
                       "jet-nav-link",
                       {
                         attrs: {
-                          href: _vm.route("admin/user/ads"),
-                          active: _vm.route().current("admin/user/ads")
+                          href: _vm.route("admin.ads"),
+                          active: _vm.route().current("admin.ads")
                         }
                       },
                       [
@@ -24616,8 +24616,8 @@ var render = function() {
                       "jet-nav-link",
                       {
                         attrs: {
-                          href: _vm.route("admin/blogs"),
-                          active: _vm.route().current("admin/blogs")
+                          href: _vm.route("admin.blogs"),
+                          active: _vm.route().current("admin.blogs")
                         }
                       },
                       [

@@ -35,14 +35,14 @@
                                 Categories
                             </jet-nav-link>
                             <jet-nav-link
-                                :href="route('admin/user/ads')"
-                                :active="route().current('admin/user/ads')"
+                                :href="route('admin.ads')"
+                                :active="route().current('admin.ads')"
                             >
                                 Posted Ads
                             </jet-nav-link>
                             <jet-nav-link
-                                :href="route('admin/blogs')"
-                                :active="route().current('admin/blogs')"
+                                :href="route('admin.blogs')"
+                                :active="route().current('admin.blogs')"
                             >
                                 Blogs
                             </jet-nav-link>

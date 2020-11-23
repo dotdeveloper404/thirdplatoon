@@ -20,8 +20,8 @@ Route::resource('ads', AdsController::class);
 
 // Route::resource('user-ad', UserAdController::class);
 
-Route::get('admin/user/ads', [UserAdController::class, "index"])->name('admin/user/ads');
-Route::get('admin/blogs', [BlogController::class, "index"])->name('admin/blogs');
+Route::get('admin/ads', [UserAdController::class, "index"])->name('admin.ads');
+Route::get('admin/blogs', [BlogController::class, "index"])->name('admin.blogs');
 
 Route::get("/about-us", [HomeController::class, "about_us"])->name('about_us');
 Route::get("/contact-us", [HomeController::class, "contact_us"])->name('contact_us');
