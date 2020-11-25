@@ -29,20 +29,22 @@
                             </jet-nav-link>
 
                             <jet-nav-link
-                                :href="route('categories')"
-                                :active="route().current('categories')"
+                                :href="route('admin.categories.index')"
+                                :active="
+                                    route().current('admin.categories.index')
+                                "
                             >
                                 Categories
                             </jet-nav-link>
                             <jet-nav-link
-                                :href="route('admin.ads')"
-                                :active="route().current('admin.ads')"
+                                :href="route('admin.ads.index')"
+                                :active="route().current('admin.ads.index')"
                             >
                                 Posted Ads
                             </jet-nav-link>
                             <jet-nav-link
-                                :href="route('admin.blogs')"
-                                :active="route().current('admin.blogs')"
+                                :href="route('admin.blog.index')"
+                                :active="route().current('admin.blog.index')"
                             >
                                 Blogs
                             </jet-nav-link>

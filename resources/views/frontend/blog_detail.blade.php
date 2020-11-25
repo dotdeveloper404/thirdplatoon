@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 
-@section('styles')
+
 <style>
     .cta-100 {
         margin-top: 100px;
@@ -147,8 +147,6 @@
         box-shadow: 0px 5px 15px inset #4d5f77;
     }
 </style>
-@endsection
-
 
 @section('content')
 <section class="banner-area">
@@ -165,6 +163,7 @@
 
             <div class="row">
                 @foreach($blogs as $blog)
+                {
                 <div class="col-md-4">
                     <div class="item-box-blog">
                         <div class="item-box-blog-image">
@@ -194,7 +193,8 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+
+                }
 
                 <div class="col-md-4">
                     <div class="item-box-blog">

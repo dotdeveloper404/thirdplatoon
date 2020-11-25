@@ -18,7 +18,7 @@
                 <li><a href="{{ route('contact_us') }}">Contact Us</a></li>
                 <li><a href="{{ route('categories') }}">Categories</a></li>
                 <li><a href="{{ route('ads.create') }}">Post Ads</a></li>
-                <li><a href="{{ route('blog') }}">Blog </a></li>
+                <li><a href="/blog">Blog </a></li>
             </ul>
         </div>
         <div class="col-md-3">
