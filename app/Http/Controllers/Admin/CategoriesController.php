@@ -10,25 +10,16 @@ use Inertia\Inertia;
 
 class CategoriesController extends Controller
 {
-    //
-
     public function index()
     {
         $data = Category::all();
         return Inertia::render('Categories/index', ['data' => $data]);
     }
 
-    public function edit($id)
-    {
-        $data = Category::find($id);
-        return View('admin.categories.edit', compact('data'));
-        //  return Inertia::render('Categories/edit', ['category' => $data]);
-    }
-
     public function store(Request $request)
     {
         Validator::make($request->all(), [
-            'title' => ['Required'],
+            'title' => ['required'],
         ])->validate();
 
         Category::create($request->all());
@@ -37,9 +28,8 @@ class CategoriesController extends Controller
 
     public function update(Request $request)
     {
-
         Validator::make($request->all(), [
-            'title' => ['Required'],
+            'title' => ['required'],
         ])->validate();
 
         if ($request->has('id')) {

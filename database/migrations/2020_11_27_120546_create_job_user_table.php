@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBlogsTable extends Migration
+class CreateJobUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateBlogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('jobs_users', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('category_id');
-            $table->string('title');
-            $table->string('slug');
-            $table->longText('description');
-            $table->string('image')->nullable();
+            $table->bigInteger('user_id');
+            $table->bigInteger('job_id');
+            $table->string('attachment');
+            $table->string('comments');
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
@@ -32,6 +31,6 @@ class CreateBlogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('job_user');
     }
 }

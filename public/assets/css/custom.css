@@ -44,3 +44,122 @@
     text-transform: capitalize;
     font-weight: 400;
 }
+
+.blog-wrap {
+    padding: 50px 0;
+}
+
+
+.article-box {
+    border: 1px solid #eee;
+    margin-bottom: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    border-radius: 5px;
+}
+
+.article-box .article-img {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.article-box .article-img a {
+    background-color: #000000;
+    display: block;
+}
+
+.article-box .article-img a img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    transition: all .3s;
+}
+
+.article-box .article-img a:hover img {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+.article-content {
+    padding: 20px 20px 30px 20px;
+    min-height: 200px;
+    position: relative;
+}
+
+.article-content h3 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.article-content h3 a {
+    color: #000000;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.article-content p {
+    color: #666666;
+    font-size: 16px;
+}
+
+.article-category {
+    color: #ffffff;
+    padding: 5px 10px;
+    line-height: normal;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #000000;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.article-date {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-style: italic;
+    color: #999;
+    font-weight:700;
+    font-size: 12px;
+}
+
+
+.sarticle-img {
+    margin-bottom: 20px;
+}
+
+.sarticle-img img {
+    max-width: 100%;
+    max-height: 400px;
+    border: 1px solid #eee;
+}
+
+.sarticle-meta ul li {
+    display: inline-block;
+    color: #666666;
+    font-size: 14px;
+    position: relative;
+}
+
+.sarticle-meta ul li:not(:last-child) {
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.sarticle-meta ul li:not(:last-child):before {content: "";position: absolute;top: 2px;right: 0;width: 1px;background: #999;height: 16px;}
+
+.sarticle-meta ul li i {
+    margin-right: 5px;
+}
+
+.sarticle-content h3 {
+    font-size: 24px;
+    color: #000000;
+    font-weight: 700;
+}
+
+.sarticle-content p {
+    color: #666666;
+    font-size: 16px;
+}

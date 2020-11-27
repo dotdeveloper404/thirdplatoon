@@ -7,16 +7,15 @@ use App\Models\Blog;
 
 class BlogController extends Controller
 {
-    //
-
     public function index()
     {
-        $blogs = Blog::all();
-        return view('frontend.blog', compact('blogs'));
+        $posts = Blog::where('status', 1)->latest('id')->paginate(10);
+        return view('frontend.blog.index', compact('posts'));
     }
-    public function show($id)
+
+    public function show($slug)
     {
-        $blog = Blog::find($id);
-        return view('frontend.blog_detail', compact('blog'));
+        $post = Blog::whereSlug($slug)->first();
+        return view('frontend.blog.show', compact('post'));
     }
 }

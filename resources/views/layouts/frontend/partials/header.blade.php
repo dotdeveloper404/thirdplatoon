@@ -48,20 +48,21 @@
     <div class="main-header">
         <div class="container">
 
-            <div class="col-md-4 logo-area">
+            <div class="col-md-3 logo-area">
                 <a href="{{ route('home') }}">
                     <img src="{{ asset('assets/images/logo.png') }}">
                 </a>
             </div>
 
-            <div class="col-md-8 main-nav-area">
+            <div class="col-md-9 main-nav-area">
                 <ul class="main-nav-ul">
-                    <li><a href="{{ route('home') }}">HOME</a></li>
-                    <li><a href="{{ route('about_us') }}">ABOUT US</a></li>
-                    <li><a href="{{ route('ads.create') }}">POST ADS</a></li>
-                    <li><a href="{{ route('categories') }}">CATEGORIES</a></li>
-                    <li><a href="/blog">BLOG </a></li>
-                    <li><a href="{{ route('contact_us') }}">CONTACT US</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('about_us') }}">About us</a></li>
+                    <li><a href="{{ route('ads.create') }}">Post ads</a></li>
+                    <li><a href="{{ route('categories') }}">Categories</a></li>
+                    <li><a href="{{ route('blog.index') }}">Blog </a></li>
+                    <li><a href="{{ route('contact_us') }}">Contact us</a></li>
+                    <li><a href="{{ route('jobs.index') }}">Jobs Listing</a></li>
                     <li><a href="{{ route('ads.index') }}">Ads Listing</a></li>
                 </ul>
             </div>

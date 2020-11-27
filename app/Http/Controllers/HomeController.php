@@ -48,11 +48,6 @@ class HomeController extends Controller
         return redirect()->route('contact_us')->withMsg(['type' => 'success', 'text' => 'Your contact form submitted successfully!']);
     }
 
-    public function blog()
-    {
-        return view('frontend.blog');
-    }
-
     public function categories()
     {
     	$categories = Category::ads()->parents()->get();

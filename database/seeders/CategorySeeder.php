@@ -17,12 +17,6 @@ class CategorySeeder extends Seeder
         $categories = [
             [
                 "title" => "Business",
-                "child" => [
-                    [
-                        "title" => "Business Child",
-                        "category_type" => "ads"
-                    ]
-                ],
                 "category_type" => "ads",
                 "image" => "ico-1.png"
             ],

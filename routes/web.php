@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\Admin\AdsController as AdminAdsController;
-use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdsController;
 use App\Http\Controllers\Admin\CategoriesController;
-use App\Http\Controllers\BlogController as ControllersBlogController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserAdController;
+use App\Http\Controllers\JobsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,15 +21,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('ads', AdsController::class);
-
-// Route::resource('user-ad', UserAdController::class);
-
+// BACKEND
 Route::resource('admin/ads', AdminAdsController::class, ['as' => 'admin']);
-Route::resource('admin/blog', BlogController::class, ['as' => 'admin']);
+Route::post('admin/blog/{id}/status', [AdminBlogController::class, 'status'])->name('admin.blog.status');
+Route::resource('admin/blog', AdminBlogController::class, ['as' => 'admin']);
 Route::resource('admin/categories', CategoriesController::class, ['as' => 'admin']);
 
-Route::resource('blog', ControllersBlogController::class);
+// FRONTEND
+Route::resource('ads', AdsController::class);
+Route::resource('blog', BlogController::class)->only(['index', 'show']);
+
+Route::resource('jobs', JobsController::class)->only(['index', 'show']);
 
 Route::get("/about-us", [HomeController::class, "about_us"])->name('about_us');
 Route::get("/contact-us", [HomeController::class, "contact_us"])->name('contact_us');
