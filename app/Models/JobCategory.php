@@ -22,4 +22,9 @@ class JobCategory extends Model
 
     protected $table = 'jobs_categories';
     protected $guarded = [];
+
+    public function jobs() 
+    {
+        return $this->hasMany(Job::class, 'category_id');
+    }
 }

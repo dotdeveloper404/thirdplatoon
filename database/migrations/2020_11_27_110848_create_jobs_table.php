@@ -30,13 +30,15 @@ class CreateJobsTable extends Migration
             $table->string('currency')->nullable();
             $table->string('pay_start')->nullable();
             $table->string('pay_end')->nullable();
-            $table->enum('pay_type', ['weekly', 'monthly', 'yearly'])->nullable();
+            $table->enum('pay_type', ['monthly', 'weekly', 'daily', 'hourly', 'yearly'])->nullable();
             $table->longText('description')->nullable();
             $table->longText('allownces')->nullable();
             $table->longText('requirements')->nullable();
             $table->timestamp('valid_till')->nullable();
             $table->enum('job_status', ['pending', 'no_longer_available'])->nullable();
             $table->boolean('status')->default(0);
+            $table->boolean('urgent')->default(0);
+            $table->boolean('featured')->default(0);
             $table->timestamps();
         });
     }
