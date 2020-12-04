@@ -45,6 +45,18 @@
                         </div>
                         <hr>
                         <div class="form-group">
+                            <label for="min_price">Price</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="number" name="min_price" id="min_price" placeholder="Min Price" class="form-control" value="{{ request()->get('min_price') }}">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="number" name="max_price" id="max_price" placeholder="Max Price" class="form-control" value="{{ request()->get('max_price') }}">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
                             <button type="submit" class="btn btn-base">Search</button>
                         </div>
                     </div>

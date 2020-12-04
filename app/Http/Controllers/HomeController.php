@@ -12,9 +12,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-    	$categories = Category::ads()->parents()->take(6)->get();
-    	$featureds = Category::ads()->parents()->take(10)->get();
-        return view("frontend.home", compact('categories', 'featureds'));
+        $categories = Category::ads()->parents()->get();
+    	// $categories = Category::ads()->parents()->take(6)->get();
+    	// $featureds = Category::ads()->parents()->take(10)->get();
+        return view("frontend.home", compact('categories'));
     }
     
     public function about_us()

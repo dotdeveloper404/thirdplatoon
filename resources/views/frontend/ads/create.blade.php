@@ -60,12 +60,6 @@
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<label for="link">Link</label>
-								<input type="url" name="link" id="link" placeholder="http://www.example.com/example" class="form-control" value="{{ old('link') }}">
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
 								<label for="image">Image <span class="text-danger">*</span></label>
 								<input type="file" name="image" id="image" class="form-control">
 								@error('image')

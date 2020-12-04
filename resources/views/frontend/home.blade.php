@@ -10,21 +10,18 @@
 </section>
 <section class="form-area">
     <div class="container">
-        <form>
-            <input type="text" name="" placeholder="Enter Keyword">
-            <select>
-                <option>all categories</option>
-                <option>category 1</option>
-                <option>category 2</option>
-                <option>category 3</option>
+        <form action="{{ route('ads.index') }}" method="GET">
+            <input type="text" name="search" id="search" placeholder="Enter Keyword" class="form-control" value="{{ request()->get('search') }}">
+            <select name="category" id="category" class="form-control">
+                <option value="">Select Category</option>
+                @if($categories->count())
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}" {{ request()->get('category') == $category->id ? 'selected' : '' }}>{{ ucwords($category->title) }}</option>
+                    @endforeach
+                @endif
             </select>
-            <input type="text" name="">
-            <select>
-                <option>select price rating</option>
-                <option> 1</option>
-                <option> 2</option>
-                <option> 3</option>
-            </select>
+            <input type="number" name="min_price" id="min_price" placeholder="Min Price" class="form-control" value="{{ request()->get('min_price') }}">
+            <input type="number" name="max_price" id="max_price" placeholder="Max Price" class="form-control" value="{{ request()->get('max_price') }}">
             <input type="submit" value="search">
         </form>
     </div>
@@ -98,10 +95,10 @@
         </div>
         <div class="col-md-6 post-ad-right">
             <h4>Featured Categories</h4>
-            @if($featureds->count())
+            @if($categories->count())
                 <ul>
-                    @foreach($featureds as $featured)
-                        <li>{{ $featured->title }}</li>
+                    @foreach($categories->take(10) as $category)
+                        <li>{{ $category->title }}</li>
                     @endforeach
                 </ul>
             @endif
@@ -113,7 +110,7 @@
     <section class="browse-categories">
         <div class="container">
             <h3>Browse Categories</h3>
-                @foreach($categories as $category)
+                @foreach($categories->take(6) as $category)
                     <div class="col-md-2 browse-box">
                         <a href="{{ $category->path() }}">
                             <img src="{{ $category->image() }}">

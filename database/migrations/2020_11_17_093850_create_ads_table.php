@@ -21,7 +21,6 @@ class CreateAdsTable extends Migration
             $table->string('slug');
             $table->double('price');
             $table->longText('description')->nullable();
-            $table->string('link')->nullable();
             $table->string('image');
             $table->boolean('status')->default(0);
             $table->timestamps();

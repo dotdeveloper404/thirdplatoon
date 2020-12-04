@@ -20,10 +20,21 @@ class AdsController extends Controller
     {
         if ($request->has('search')) {
             $ads = Ads::where(function ($query) use ($request) {
-                if ($request->has('category')) {
+                if ($request->has('category') && $request->category != '') {
                     $query->where('category_id', $request->category);
                 }
-                $query->orWhere('title', 'LIKE', '%%' . $request->search . '%%')->orWhere('description', 'LIKE', '%%' . $request->search . '%%');
+
+                if ($request->has('min_price') && $request->min_price != '') {
+                    $query->where('price', '>=', $request->min_price);
+                }
+
+                if ($request->has('max_price') && $request->max_price != '') {
+                    $query->where('price', '<=', $request->max_price);
+                }
+
+                if ($request->search != '') {
+                    $query->where('title', 'LIKE', '%%' . $request->search . '%%')->orWhere('description', 'LIKE', '%%' . $request->search . '%%');
+                }
             })->latest('id')->paginate(10);
         } else {
             $ads = Ads::latest('id')->paginate(10);
@@ -62,7 +73,6 @@ class AdsController extends Controller
             'category_id' => $request->category,
             'price' => $request->price,
             'description' => $request->description,
-            'link' => $request->link,
             'image' => $filename
         ]);
 

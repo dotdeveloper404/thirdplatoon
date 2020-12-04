@@ -113,22 +113,23 @@ ul.main-nav-ul {
     border-radius: 5px;
 }
 
-section.form-area input[type=text] {
-    width: 25%;
+section.form-area input[type=text], section.form-area input[type=number] {
     height: 40px;
     border-radius: 7px;
     border: none;
     padding-left: 30px;
+    display: inline-block;
 }
 
 section.form-area select {
-    width: 15%;
+    width: 20%;
     height: 40px;
     border-radius: 7px;
+    display: inline-block;
 }
 
 section.form-area input[type=submit] {
-    width: 15%;
+    width: 18%;
     height: 40px;
     background: #1be500;
     border-radius: 7px;
@@ -136,7 +137,18 @@ section.form-area input[type=submit] {
     font-weight: 700;
     color: #000;
     text-transform: capitalize;
+    display: inline-block;
 }
+
+
+section.form-area input[type=text] {
+    width: 30%;
+}
+
+section.form-area input[type=number] {
+    width: 15%;
+}
+
 
 section.form-area {
     padding: 30px 0px;
