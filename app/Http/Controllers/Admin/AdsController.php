@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use App\Models\{Ads, Category, User};
+use App\Models\{AdContact, Ads, AdUser, Category, User};
 use Illuminate\Support\Facades\Validator;
 
 class AdsController extends Controller
@@ -38,6 +38,12 @@ class AdsController extends Controller
 
         Ads::create($request->except(['ad_image']));
         return redirect()->back()->with('message', 'Ad Created successfully');
+    }
+
+    public function contact($id)
+    {
+        $ad = AdUser::where('ad_id', $id)->get();
+        return Inertia::render('Ads/contact', ['data' => $ad]);
     }
 
     public function update(Request $request)

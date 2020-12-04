@@ -21,17 +21,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('artisan', function () {
+    return \Artisan::call('storage:link');
+});
+
 // BACKEND
+Route::get('admin/ads/{id}/contact', [AdminAdsController::class, 'contact'], ['as' => 'admin'])->name('admin.ads.contact');
 Route::resource('admin/ads', AdminAdsController::class, ['as' => 'admin']);
 Route::post('admin/blog/{id}/status', [AdminBlogController::class, 'status'])->name('admin.blog.status');
 Route::resource('admin/blog', AdminBlogController::class, ['as' => 'admin']);
 Route::resource('admin/categories', CategoriesController::class, ['as' => 'admin']);
 
 // FRONTEND
+
+Route::post('ads/{id}/contact/', [AdsController::class, 'contact'])->name('ads.contact');
+
 Route::resource('ads', AdsController::class);
 Route::resource('blog', BlogController::class)->only(['index', 'show']);
 
 Route::resource('jobs', JobsController::class)->only(['index', 'show']);
+
+
 
 Route::get("/about-us", [HomeController::class, "about_us"])->name('about_us');
 Route::get("/contact-us", [HomeController::class, "contact_us"])->name('contact_us');

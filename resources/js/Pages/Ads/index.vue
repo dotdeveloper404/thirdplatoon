@@ -56,6 +56,14 @@
                                     {{ row.price }}
                                 </td>
                                 <td class="border px-4 py-2">
+                                    <a
+                                        :href="
+                                            route('admin.ads.contact', row.id)
+                                        "
+                                        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-2 rounded"
+                                    >
+                                        Contacts
+                                    </a>
                                     <button
                                         @click="edit(row)"
                                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -339,11 +347,22 @@ export default {
                 description: null,
                 category_id: null,
                 user_id: null,
-                ad_image
+                ad_image: null
             };
         },
         save: function(data) {
-            this.$inertia.post("/admin/ads", data);
+            var fd = new FormData();
+            fd.append("ad_image", this.ad_image);
+            _.forEach(this.form, function(value, key) {
+                fd.append(key, value);
+            });
+            this.$inertia.post("/admin/ads", fd, {
+                headers: {
+                    "content-type": "multipart/form-data"
+                }
+            });
+
+            //this.$inertia.post("/admin/ads", data);
             this.reset();
             this.closeModal();
             this.editMode = false;

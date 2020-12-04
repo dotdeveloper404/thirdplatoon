@@ -20,24 +20,49 @@ class Ads extends Model
         ];
     }
 
+    protected $appends = [
+        'link',
+        'image_path',
+    ];
+
     protected $table = 'ads';
     protected $guarded = [];
 
-    public function category() 
+    public function category()
     {
-    	return $this->belongsTo(Category::class, 'category_id');
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
-    public function user() 
+    public function user()
     {
-    	return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function image() {
+    public function image()
+    {
         return asset('storage/ads/' . $this->image);
     }
 
-    public function price() {
+    public function price()
+    {
         return number_format($this->price, 2);
+    }
+
+    public function getLinkAttribute()
+    {
+        return route('ads.show', $this->slug);
+    }
+
+    public function getImagePathAttribute()
+    {
+        if ($this->image == '') {
+            return asset('assets/images/placeholder.png');
+        }
+        return asset('assets/storage/ads/' . $this->image);
+    }
+
+    public function ad_users()
+    {
+        return $this->hasMany(AdUser::class, 'ad_id');
     }
 }

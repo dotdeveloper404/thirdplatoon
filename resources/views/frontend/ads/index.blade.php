@@ -8,6 +8,14 @@
 </section>
 <section class="main-section">
     <div class="container">
+        @if(session()->has('msg'))
+        @if(session()->get('msg')['type'] == 'success')
+        <div class="alert alert-success">{{ session()->get('msg')['text'] }}</div>
+        @endif
+        @if(session()->get('msg')['type'] == 'error')
+        <div class="alert alert-danger">{{ session()->get('msg')['text'] }}</div>
+        @endif
+        @endif
         <div class="row">
             <div class="col-md-4">
                 <form action="{{ route('ads.index') }}" method="GET">
@@ -18,7 +26,8 @@
                         <hr>
                         <div class="form-group">
                             <label for="search">Search</label>
-                            <input type="text" name="search" id="search" placeholder="Search...." class="form-control" value="{{ request()->get('search') }}">
+                            <input type="text" name="search" id="search" placeholder="Search...." class="form-control"
+                                value="{{ request()->get('search') }}">
                         </div>
                         <hr>
                         <div class="form-group">
@@ -26,9 +35,11 @@
                             <select name="category" id="category" class="form-control">
                                 <option value="">Select Category</option>
                                 @if($categories->count())
-                                    @foreach($categories as $category)
-                                        <option value="{{ $category->id }}" {{ request()->get('category') == $category->id ? 'selected' : '' }}>{{ ucwords($category->title) }}</option>
-                                    @endforeach
+                                @foreach($categories as $category)
+                                <option value="{{ $category->id }}"
+                                    {{ request()->get('category') == $category->id ? 'selected' : '' }}>
+                                    {{ ucwords($category->title) }}</option>
+                                @endforeach
                                 @endif
                             </select>
                         </div>
@@ -41,32 +52,32 @@
             </div>
             <div class="col-md-8">
                 @if($ads->count())
-                    @foreach($ads as $ad)
-                        <div class="ad-box">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="{{ $ad->image() }}" alt="{{ $ad->title }}" class="img-responsive img-thumbnail">
-                                </div>
-                                <div class="col-md-8">
-                                    <span class="label label-success">{{ ucwords($ad->category->title) }}</span>
-                                    <h4>{{ ucwords($ad->title) }}</h4>
-                                    <strong class="text-danger">{{ currency_symbol() }}{{ $ad->price() }}</strong>
-                                    <br><br>
-                                    <p>{{ substr($ad->description, 0, 50) }}..</p>
-                                    <hr>
-                                    <div class="text-right">
-                                        <a href="javascript:void(0);" class="btn btn-base btn-sm">More Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
+                @foreach($ads as $ad)
+                <div class="ad-box">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{{ $ad->image() }}" alt="{{ $ad->title }}" class="img-responsive img-thumbnail">
                         </div>
-                    @endforeach
-                    <div>
-                        {{ $ads->links() }}
+                        <div class="col-md-8">
+                            <span class="label label-success">{{ ucwords($ad->category->title) }}</span>
+                            <h4>{{ ucwords($ad->title) }}</h4>
+                            <strong class="text-danger">{{ currency_symbol() }}{{ $ad->price() }}</strong>
+                            <br><br>
+                            <p>{{ substr($ad->description, 0, 50) }}..</p>
+                            <hr>
+                            <div class="text-right">
+                                <a href="{{ $ad->link}}" class="btn btn-base btn-sm">More Details</a>
+                            </div>
+                        </div>
                     </div>
+                    <br>
+                </div>
+                @endforeach
+                <div>
+                    {{ $ads->links() }}
+                </div>
                 @else
-                    <div class="well">No Ads Found!</div>
+                <div class="well">No Ads Found!</div>
                 @endif
             </div>
         </div>

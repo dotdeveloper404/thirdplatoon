@@ -32,10 +32,10 @@ class BlogController extends Controller
         ]);
 
         $filename = null;
-        if($request->hasFile('image')) {
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $filename = time().uniqid().'.'.$file->getClientOriginalExtension();
-	        $file->storeAs('public/blog', $filename);
+            $filename = time() . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/blog', $filename);
         }
 
         Blog::create([
@@ -52,7 +52,7 @@ class BlogController extends Controller
     {
         $categories = Category::ads()->get();
         $post = Blog::findOrFail($id);
-        $post->load('category');    
+        $post->load('category');
         return Inertia::render("Blog/edit", compact('post', 'categories'));
     }
 
@@ -67,13 +67,13 @@ class BlogController extends Controller
         $post = Blog::findOrFail($id);
 
         $filename = $post->image;
-        if($request->hasFile('image')) {
-            if (Storage::exists('/public/blog/'. $filename)) {
-                Storage::delete('/public/blog/'. $filename);
+        if ($request->hasFile('image')) {
+            if (Storage::exists('/public/blog/' . $filename)) {
+                Storage::delete('/public/blog/' . $filename);
             }
             $file = $request->file('image');
-            $filename = time().uniqid().'.'.$file->getClientOriginalExtension();
-	        $file->storeAs('public/blog', $filename);
+            $filename = time() . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/blog', $filename);
         }
 
         $post->update([
@@ -89,11 +89,11 @@ class BlogController extends Controller
     public function destroy($id)
     {
         $post = Blog::findOrFail($id);
-        if (Storage::exists('/public/blog/'. $post->image)) {
-            Storage::delete('/public/blog/'. $post->image);
+        if (Storage::exists('/public/blog/' . $post->image)) {
+            Storage::delete('/public/blog/' . $post->image);
         }
         $post->delete();
-        return redirect()->back()->with('message', 'Post Deleted Sucessfully');   
+        return redirect()->back()->with('message', 'Post Deleted Sucessfully');
     }
 
     public function status($id)

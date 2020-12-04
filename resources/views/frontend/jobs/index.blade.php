@@ -1,4 +1,3 @@
-
 @extends('layouts.frontend.app')
 
 @section('styles')
@@ -20,12 +19,14 @@
                 <aside class="jobs-sidebar">
                     <div class="meta-box">
                         <div class="meta-head">
-                            <h3><a href="#search-keywords" data-toggle="collapse" aria-expanded="true">Search Keywords</a></h3>
+                            <h3><a href="#search-keywords" data-toggle="collapse" aria-expanded="true">Search
+                                    Keywords</a></h3>
                         </div>
                         <div class="meta-body collapse in" id="search-keywords">
                             <div class="meta-inner-wrap">
                                 <div class="input-group">
-                                    <input type="text" name="s" id="s" class="input-control" placeholder="e.g. Web Design">
+                                    <input type="text" name="s" id="s" class="input-control"
+                                        placeholder="e.g. Web Design">
                                 </div>
                             </div>
                         </div>
@@ -37,21 +38,23 @@
                         <div class="meta-body collapse in" id="category">
                             <div class="meta-inner-wrap">
                                 @if($categories->count())
-                                    @foreach($categories as $category)
-                                        <div class="input-group">
-                                            <label class="input-checkbox-label">
-                                                <input type="checkbox" name="category[]" class="input-checkbox" value="{{ $category->slug }}">
-                                                <span>{{ $category->title }} ({{ $category->jobs->count() }})</span>
-                                            </label>
-                                        </div>
-                                    @endforeach
+                                @foreach($categories as $category)
+                                <div class="input-group">
+                                    <label class="input-checkbox-label">
+                                        <input type="checkbox" name="category[]" class="input-checkbox"
+                                            value="{{ $category->slug }}">
+                                        <span>{{ $category->title }} ({{ $category->jobs->count() }})</span>
+                                    </label>
+                                </div>
+                                @endforeach
                                 @endif
                             </div>
                         </div>
                     </div>
                     <div class="meta-box">
                         <div class="meta-head">
-                            <h3><a href="#location-list" data-toggle="collapse" aria-expanded="true">Location list</a></h3>
+                            <h3><a href="#location-list" data-toggle="collapse" aria-expanded="true">Location list</a>
+                            </h3>
                         </div>
                         <div class="meta-body collapse in" id="location-list">
                             <div class="meta-inner-wrap">
@@ -83,14 +86,15 @@
                         <div class="meta-body collapse in" id="job-type">
                             <div class="meta-inner-wrap">
                                 @if(job_types())
-                                    @foreach(job_types() as $job_type)
-                                        <div class="input-group">
-                                            <label class="input-radio-label">
-                                                <input type="radio" name="job_type[]" class="input-radio" value="{{ $job_type }}">
-                                                <span>{{ str_format($job_type) }} </span>
-                                            </label>
-                                        </div>
-                                    @endforeach
+                                @foreach(job_types() as $job_type)
+                                <div class="input-group">
+                                    <label class="input-radio-label">
+                                        <input type="radio" name="job_type[]" class="input-radio"
+                                            value="{{ $job_type }}">
+                                        <span>{{ str_format($job_type) }} </span>
+                                    </label>
+                                </div>
+                                @endforeach
                                 @endif
                             </div>
                         </div>
@@ -102,14 +106,15 @@
                         <div class="meta-body collapse in" id="salary">
                             <div class="meta-inner-wrap">
                                 @if(pay_types())
-                                    @foreach(pay_types() as $pay_type)
-                                        <div class="input-group">
-                                            <label class="input-radio-label">
-                                                <input type="radio" name="pay_type[]" class="input-radio" value="{{ $pay_type }}">
-                                                <span>{{ str_format($pay_type) }} </span>
-                                            </label>
-                                        </div>
-                                    @endforeach
+                                @foreach(pay_types() as $pay_type)
+                                <div class="input-group">
+                                    <label class="input-radio-label">
+                                        <input type="radio" name="pay_type[]" class="input-radio"
+                                            value="{{ $pay_type }}">
+                                        <span>{{ str_format($pay_type) }} </span>
+                                    </label>
+                                </div>
+                                @endforeach
                                 @endif
                             </div>
                         </div>
@@ -121,14 +126,14 @@
                         <div class="meta-body collapse in" id="date-posted">
                             <div class="meta-inner-wrap">
                                 @if(posted_dates())
-                                    @foreach(posted_dates() as $key => $posted_date)
-                                        <div class="input-group">
-                                            <label class="input-radio-label">
-                                                <input type="radio" name="posted_date[]" class="input-radio" value="{{ $key }}">
-                                                <span>{{ $posted_date }} </span>
-                                            </label>
-                                        </div>
-                                    @endforeach
+                                @foreach(posted_dates() as $key => $posted_date)
+                                <div class="input-group">
+                                    <label class="input-radio-label">
+                                        <input type="radio" name="posted_date[]" class="input-radio" value="{{ $key }}">
+                                        <span>{{ $posted_date }} </span>
+                                    </label>
+                                </div>
+                                @endforeach
                                 @endif
                             </div>
                         </div>
@@ -164,14 +169,17 @@
                         <div class="job-block-head">
                             <div class="job-block-employer-header">
                                 <div class="job-block-employer-logo">
-                                    <img src="{{ asset('assets/images/logo1.jpg') }}" alt="Redesign Co" title="Redesign Co">
+                                    <img src="{{ asset('assets/images/logo1.jpg') }}" alt="Redesign Co"
+                                        title="Redesign Co">
                                 </div>
                                 <div class="job-block-title-wrapper">
-                                    <h3 class="job-block-employer-title"><a href="{{ route('jobs.show', ['123']) }}">Redesign Co</a></h3>
+                                    <h3 class="job-block-employer-title"><a
+                                            href="{{ route('jobs.show', ['123']) }}">Redesign Co</a></h3>
                                     <h4 class="job-block-title">Product Design</h4>
                                 </div>
                             </div>
-                            <a href="#" class="job-block-featured" data-toggle="tooltip" data-placement="left" title="Featured"><i class="fa fa-star"></i></a>
+                            <a href="#" class="job-block-featured" data-toggle="tooltip" data-placement="left"
+                                title="Featured"><i class="fa fa-star"></i></a>
                             <div class="job-block-urgent-label">Urgent</div>
                         </div>
                         <div class="job-block-body">
@@ -186,7 +194,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="job-block-btns">
-                                        <div class="job-block-deadline-time">Application ends: <strong>June 25, 2022</strong></div>
+                                        <div class="job-block-deadline-time">Application ends: <strong>June 25,
+                                                2022</strong></div>
                                         <a href="javascript:void(0);" class="btn btn-apply">Apply Now</a>
                                         <a href="{{ route('jobs.show', ['123']) }}" class="btn btn-view">View Job</a>
                                     </div>
@@ -198,10 +207,12 @@
                         <div class="job-block-head">
                             <div class="job-block-employer-header">
                                 <div class="job-block-employer-logo">
-                                    <img src="{{ asset('assets/images/logo2.jpg') }}" alt="CoderBold ALT" title="CoderBold ALT">
+                                    <img src="{{ asset('assets/images/logo2.jpg') }}" alt="CoderBold ALT"
+                                        title="CoderBold ALT">
                                 </div>
                                 <div class="job-block-title-wrapper">
-                                    <h3 class="job-block-employer-title"><a href="{{ route('jobs.show', ['123']) }}">CoderBold ALT</a></h3>
+                                    <h3 class="job-block-employer-title"><a
+                                            href="{{ route('jobs.show', ['123']) }}">CoderBold ALT</a></h3>
                                     <h4 class="job-block-title">Product Mockup</h4>
                                 </div>
                             </div>
@@ -212,14 +223,16 @@
                                 <div class="col-md-8">
                                     <div class="job-block-information">
                                         <p><strong>Deadline date:</strong> <span>June 24, 2022</span></p>
-                                        <p><strong>Job Type:</strong> <span class="text-default">Contract Base</span></p>
+                                        <p><strong>Job Type:</strong> <span class="text-default">Contract Base</span>
+                                        </p>
                                         <p><strong>Location:</strong> <span>18 Brooklyn, NY</span></p>
                                         <p><strong>Salary:</strong> <span>$20 – $35 per hour</span></p>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="job-block-btns">
-                                        <div class="job-block-deadline-time">Application ends: <strong>June 24, 2022</strong></div>
+                                        <div class="job-block-deadline-time">Application ends: <strong>June 24,
+                                                2022</strong></div>
                                         <a href="javascript:void(0);" class="btn btn-apply">Apply Now</a>
                                         <a href="{{ route('jobs.show', ['123']) }}" class="btn btn-view">View Job</a>
                                     </div>
@@ -231,10 +244,12 @@
                         <div class="job-block-head">
                             <div class="job-block-employer-header">
                                 <div class="job-block-employer-logo">
-                                    <img src="{{ asset('assets/images/logo3.jpg') }}" alt="Go Technologies" title="Go Technologies">
+                                    <img src="{{ asset('assets/images/logo3.jpg') }}" alt="Go Technologies"
+                                        title="Go Technologies">
                                 </div>
                                 <div class="job-block-title-wrapper">
-                                    <h3 class="job-block-employer-title"><a href="{{ route('jobs.show', ['123']) }}">Go Technologies</a></h3>
+                                    <h3 class="job-block-employer-title"><a href="{{ route('jobs.show', ['123']) }}">Go
+                                            Technologies</a></h3>
                                     <h4 class="job-block-title">WordPress Developer</h4>
                                 </div>
                             </div>
@@ -252,7 +267,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="job-block-btns">
-                                        <div class="job-block-deadline-time">Application ends: <strong>June 24, 2022</strong></div>
+                                        <div class="job-block-deadline-time">Application ends: <strong>June 24,
+                                                2022</strong></div>
                                         <a href="javascript:void(0);" class="btn btn-apply">Apply Now</a>
                                         <a href="{{ route('jobs.show', ['123']) }}" class="btn btn-view">View Job</a>
                                     </div>
@@ -264,10 +280,12 @@
                         <div class="job-block-head">
                             <div class="job-block-employer-header">
                                 <div class="job-block-employer-logo">
-                                    <img src="{{ asset('assets/images/logo4.jpg') }}" alt="Win Developer" title="Win Developer">
+                                    <img src="{{ asset('assets/images/logo4.jpg') }}" alt="Win Developer"
+                                        title="Win Developer">
                                 </div>
                                 <div class="job-block-title-wrapper">
-                                    <h3 class="job-block-employer-title"><a href="{{ route('jobs.show', ['123']) }}">Win Developer</a></h3>
+                                    <h3 class="job-block-employer-title"><a href="{{ route('jobs.show', ['123']) }}">Win
+                                            Developer</a></h3>
                                     <h4 class="job-block-title">Web Maintenence</h4>
                                 </div>
                             </div>
@@ -285,7 +303,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="job-block-btns">
-                                        <div class="job-block-deadline-time">Application ends: <strong>June 28, 2022</strong></div>
+                                        <div class="job-block-deadline-time">Application ends: <strong>June 28,
+                                                2022</strong></div>
                                         <a href="javascript:void(0);" class="btn btn-apply">Apply Now</a>
                                         <a href="{{ route('jobs.show', ['123']) }}" class="btn btn-view">View Job</a>
                                     </div>
@@ -297,10 +316,12 @@
                         <div class="job-block-head">
                             <div class="job-block-employer-header">
                                 <div class="job-block-employer-logo">
-                                    <img src="{{ asset('assets/images/logo5.jpg') }}" alt="DG Company" title="DG Company">
+                                    <img src="{{ asset('assets/images/logo5.jpg') }}" alt="DG Company"
+                                        title="DG Company">
                                 </div>
                                 <div class="job-block-title-wrapper">
-                                    <h3 class="job-block-employer-title"><a href="{{ route('jobs.show', ['123']) }}">DG Company</a></h3>
+                                    <h3 class="job-block-employer-title"><a href="{{ route('jobs.show', ['123']) }}">DG
+                                            Company</a></h3>
                                     <h4 class="job-block-title">Photoshop Designer</h4>
                                 </div>
                             </div>
@@ -318,7 +339,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="job-block-btns">
-                                        <div class="job-block-deadline-time">Application ends: <strong>June 17, 2022</strong></div>
+                                        <div class="job-block-deadline-time">Application ends: <strong>June 17,
+                                                2022</strong></div>
                                         <a href="javascript:void(0);" class="btn btn-apply">Apply Now</a>
                                         <a href="{{ route('jobs.show', ['123']) }}" class="btn btn-view">View Job</a>
                                     </div>
