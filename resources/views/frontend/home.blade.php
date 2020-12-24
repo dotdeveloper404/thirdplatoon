@@ -106,7 +106,7 @@
         </div>
     </div>
 </section>
-@if($categories->count())
+@if(!$categories->count())
     <section class="browse-categories">
         <div class="container">
             <h3>Browse Categories</h3>

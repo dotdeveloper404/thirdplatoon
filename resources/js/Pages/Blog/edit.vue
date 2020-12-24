@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <div class="mb-5">
-                        <inertia-link :href="route('admin.blog.index')" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3 inline-block">All Post</inertia-link>
+                        <inertia-link :href="route('admin.blog.index')" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3 inline-block">All Posts</inertia-link>
                     </div>
                     <form enctype="multipart/form-data" @submit.prevent="update()">
                         <div class="mb-5">
@@ -85,7 +85,7 @@ export default {
                 category: this.post.category.id,
                 description: this.post.description,
             },
-            image: null
+            image: ''
         };
     },
 

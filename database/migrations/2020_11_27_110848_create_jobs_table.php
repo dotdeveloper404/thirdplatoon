@@ -15,7 +15,8 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('category_id');
+            $table->integer('user_id');
+            $table->integer('category_id');
             $table->string('company_logo')->nullable();
             $table->string('company_name')->nullable();
             $table->string('location')->nullable();
@@ -25,7 +26,7 @@ class CreateJobsTable extends Migration
             $table->string('designation')->nullable();
             $table->enum('job_type', ['internship', 'freelancer', 'part_time', 'full_time', 'contract_base'])->nullable();
             $table->enum('shift', ['morning', 'evening', 'night'])->nullable();
-            $table->string('experince')->nullable();
+            $table->string('experience')->nullable();
             $table->string('qualification')->nullable();
             $table->string('currency')->nullable();
             $table->string('pay_start')->nullable();

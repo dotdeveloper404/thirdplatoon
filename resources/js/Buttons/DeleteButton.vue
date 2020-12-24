@@ -1,6 +1,6 @@
 
 <template>
-    <button type="button" class="text-white font-bold py-2 px-4 rounded inline-block bg-red-500 hover:bg-red-700" @click="destroy()">Delete</button>
+    <button type="button" class="text-sm mb-2 text-white font-bold py-1 px-3 rounded inline-block bg-red-500 hover:bg-red-700" @click="destroy()">Delete</button>
 </template>
 
 <script>

@@ -18,7 +18,6 @@ class CreateJobCategoryTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->longText('description')->nullable();
-            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

@@ -31,7 +31,7 @@
                         @if (Route::has('login'))
                         @auth
                         <a href="javascript:void(0);" class="text-sm text-gray-700 underline"
-                            onclick="getElementByID('authLogout').submit();">
+                            onclick="jQuery('#authLogout').submit();">
                             <i class="fa fa-sign-out"></i>
                             Sign Out
                         </a>

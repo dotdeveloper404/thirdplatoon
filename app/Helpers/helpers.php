@@ -1,13 +1,13 @@
 <?php
 
-function currency_symbol() 
+function currency_symbol($currency = 'USD') 
 {
-	return '$';
+	return currencies_symbols()[$currency];
 }
 
-function price_format($price) 
+function price_format($price, $currency = 'USD') 
 {
-	return currency_symbol() . number_format($price, 2);
+	return currency_symbol($currency) . number_format($price, 2);
 }
 
 function str_format($str)
@@ -39,5 +39,17 @@ function posted_dates()
 		'14days' => 'Last 14 Days',
 		'30days' => 'Last 30 Days',
 		'all' => 'All',
+	];
+}
+
+function currencies() {
+	return ["USD", "EUR", "GBP"];
+}
+
+function currencies_symbols() {
+	return [
+		"USD" => "$", 
+		"EUR" => "€", 
+		"GBP" => "£"
 	];
 }

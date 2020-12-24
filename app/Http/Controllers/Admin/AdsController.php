@@ -13,7 +13,11 @@ class AdsController extends Controller
 
     public function index()
     {
-        $data = Ads::with('category', 'user')->get();
+        $data = Ads::where(function($query){
+            if(auth()->user()->user_type == 'customer') {
+                $query->where('user_id' , auth()->user()->id);
+            }
+        })->with('category', 'user')->get();
 
         $categories = Category::where('category_type', 'ads')->get();
         $users = User::all();
@@ -36,6 +40,10 @@ class AdsController extends Controller
         }
         $request->merge(['image' => $filename]);
 
+        if(auth()->user()->user_type == 'customer') {
+            $request->merge(['user_id' => auth()->user()->id]);
+        }
+
         Ads::create($request->except(['ad_image']));
         return redirect()->back()->with('message', 'Ad Created successfully');
     }
@@ -48,8 +56,6 @@ class AdsController extends Controller
 
     public function update(Request $request)
     {
-
-
         Validator::make($request->all(), [
             'title' => ['Required'],
             'category_id' => ['Required'],
@@ -64,7 +70,13 @@ class AdsController extends Controller
         }
         $request->merge(['image' => $filename]);
 
-        Ads::find($request->input('id'))->update($request->except('ad_image'));
+        Ads::find($request->input('id'))->update([
+            'category_id' => $request->category_id,
+            'title' => $request->title,
+            'price' => $request->price,
+            'description' => $request->description,
+            'image' => $filename
+        ]);
 
         return redirect()->back()->with('message', 'Ad Updated Successfully');
     }

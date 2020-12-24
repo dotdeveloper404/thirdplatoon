@@ -18,8 +18,8 @@ class CreateJobUserTable extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('job_id');
             $table->string('attachment');
-            $table->string('comments');
-            $table->boolean('status')->default(0);
+            $table->string('comments')->nullable();
+            $table->enum('status', ['applied', 'pending', 'refused'])->default('pending');
             $table->timestamps();
         });
     }

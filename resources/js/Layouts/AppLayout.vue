@@ -30,10 +30,8 @@
 
                             <jet-nav-link
                                 :href="route('admin.categories.index')"
-                                :active="
-                                    route().current('admin.categories.index')
-                                "
-                            >
+                                :active="route().current('admin.categories.index')"
+                                v-if="$page.user.user_type == 'admin'">
                                 Categories
                             </jet-nav-link>
                             <jet-nav-link
@@ -45,8 +43,20 @@
                             <jet-nav-link
                                 :href="route('admin.blog.index')"
                                 :active="route().current('admin.blog.index')"
-                            >
+                                v-if="$page.user.user_type == 'admin'">
                                 Blogs
+                            </jet-nav-link>
+                            <jet-nav-link
+                                :href="route('admin.jobs.index')"
+                                :active="route().current('admin.jobs.index')"
+                            >
+                                Jobs
+                            </jet-nav-link>
+                            <jet-nav-link
+                                :href="route('admin.applied_jobs.index')"
+                                :active="route().current('admin.applied_jobs.index')"
+                            >
+                                Applied Jobs
                             </jet-nav-link>
                         </div>
                     </div>

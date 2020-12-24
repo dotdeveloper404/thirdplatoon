@@ -1,6 +1,7 @@
 require("./bootstrap");
 
 import Vue from "vue";
+import Vue2Editor from "vue2-editor";
 
 import { InertiaApp } from "@inertiajs/inertia-vue";
 import { InertiaForm } from "laravel-jetstream";

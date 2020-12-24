@@ -37,7 +37,7 @@
                                     <status-button :item="post"></status-button>
                                 </td>
                                 <td class="border px-4 py-2">
-                                    <inertia-link :href="post.edit_url" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block">Edit</inertia-link>
+                                    <inertia-link :href="post.edit_url" class="text-sm mb-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded inline-block">Edit</inertia-link>
                                     <delete-button :item="post"></delete-button>
                                 </td>
                             </tr>

@@ -1,5 +1,5 @@
 <template>
-    <button type="button" class="text-white font-bold py-1 px-3 rounded inline-block" :class="classes" v-on:click="toggleStatus()">{{ toggleText }}</button>
+    <button type="button" class="text-sm text-white mb-2 font-bold py-1 px-3 rounded inline-block" :class="classes" v-on:click="toggleStatus()">{{ toggleText }}</button>
 </template>
 
 <script>

@@ -141,7 +141,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="mb-4">
+                                            <div class="mb-4" v-if="$page.user.user_type == 'admin'">
                                                 <label
                                                     for="exampleFormControlInput1"
                                                     class="block text-gray-700 text-sm font-bold mb-2"
@@ -374,8 +374,13 @@ export default {
             this.openModal();
         },
         update: function(data) {
-            data._method = "PUT";
-            this.$inertia.post("/admin/ads/" + data.id, data);
+            var fd = new FormData();
+            fd.append("ad_image", this.ad_image);
+            fd.append("_method", 'PUT');
+            _.forEach(this.form, function(value, key) {
+                fd.append(key, value);
+            });
+            this.$inertia.post("/admin/ads/" + data.id, fd);
             this.reset();
             this.closeModal();
         },
